@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 11:26:09 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 11:29:01 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,6 +102,6 @@ if [ $ISOK = "KO" ]
 then
 	printf "\n      \e[101mNOT ALL INSTRUCTION WORK WITH \e[39m\e[101mOk\e[49m\n"
 else
-	printf "\e[93mYOU GOT\e[39m $ch\n\n"
+	printf "${bold}\e[93mYOU GOT\e[39m $ch${normal}\n\n"
 	printf "      \e[42m${bold}ALL INSTRUCTION WORK WITH OK${normal}\e[49m\n"
 fi
