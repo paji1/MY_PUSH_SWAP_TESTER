@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 10:05:10 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 10:55:59 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,9 +75,9 @@ do
 	
    fun $1 $T
    if [ $CHECK = "OK" ];then
-   echo "\e[36m"$((i +1))"\e[39m" "\t" $T "\t" $ch "\t" "\e[92m"$CHECK
+   printf "\e[36m$((i +1))\e[39m\t$T\t $ch\t\e[92m$CHECK\e[39m\n"
    else
-   echo "\e[36m"$((i +1))"\e[39m" "\t" $T "\t" $ch "\t" "\e[91m"$CHECK
+   printf "\e[36m$((i +1))\e[39m\t$T\t$ch\t\e[91m$CHECK\e[39m\n"
 	fi
    if [ $T -gt $best ];
    then 
@@ -90,15 +90,15 @@ do
    rm -rf numbers.txt
    i=`expr $i + 1`
 done
-echo "\e[93mMAX Instruction\e[39m" $best
-echo "\e[93mAVREGE Instruction\e[39m" $(((best + min) /2 ))
-echo "\e[93mMIN Instruction\e[39m" $min
+printf "\e[93mMAX Instruction\e[39m $best\n"
+printf "\e[93mAVREGE Instruction\e[39m $(((best + min) /2 ))\n"
+printf "\e[93mMIN Instruction\e[39m $min\n"
 
 fun $1 $best
 if [ $ISOK = "KO" ]
 then
-	echo "\e[101mNOT ALL INSTRUCTION WORK\e[39m" "\e[101mKO\e[49m"
+	printf "\n      \e[101mNOT ALL INSTRUCTION WORK WITH \e[39m\e[101mOk\e[49m\n"
 else
-	echo "\e[93mYOU GOT\e[39m" $ch
-	echo "\e[93mALL INSTRUCTION WORK\e[39m" "\e[42mOK\e[49m"
+	printf "\e[93mYOU GOT\e[39m $ch\n\n"
+	printf "      \e[42mALL INSTRUCTION WORK WITH OK\e[49m\n"
 fi
