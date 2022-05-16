@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 15:14:16 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 16:56:50 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,40 +19,58 @@ fun()
 {
 	if [ $1 -eq 100 ]
 	then
-		if [ $2 -lt 700 ]
+		if [ $2 -lt 701 ]
 		then
 			ch="\e[42m5 POINT\e[49m"
-		elif [ $2 -lt 900 ]
+		elif [ $2 -lt 901 ]
 		then
 			ch="\e[42m4 POINT\e[49m"
-		elif [ $2 -lt 1100 ]
+		elif [ $2 -lt 1101 ]
 		then
 			ch="\e[42m3 POINT\e[49m"
-		elif [ $2 -lt 1300 ]
+		elif [ $2 -lt 1301 ]
 		then
 			ch="\e[42m2 POINT\e[49m"
-		elif [ $2 -lt 1500 ]
+		elif [ $2 -lt 1501 ]
 		then
 			ch="\e[42m1 POINT\e[49m"
 		fi
 	elif [ $1 -eq 500 ]
 	then
-		if [ $2 -lt 5500 ]
+		if [ $2 -lt 5501 ]
 		then
 			ch="\e[42m5 POINT\e[49m"
-		elif [ $2 -lt 7000 ]
+		elif [ $2 -lt 7001 ]
 		then
 			ch="\e[42m4 POINT\e[49m"
-		elif [ $2 -lt 8500 ]
+		elif [ $2 -lt 8501 ]
 		then
 			ch="\e[42m3 POINT\e[49m"
-		elif [ $2 -lt 10000 ]
+		elif [ $2 -lt 10001 ]
 		then
 			ch="\e[42m2 POINT\e[49m"
-		elif [ $2 -lt 11500 ]
+		elif [ $2 -lt 11501 ]
 		then
 			ch="\e[42m1 POINT\e[49m"
 		fi
+	elif [ $1 -eq 3 ]
+	then
+		if [ $2 -lt 4 ]
+		then
+			ch="\e[42m5 POINT\e[49m"
+		else
+			ch="\e[101m0 POINT\e[49m"
+		fi
+	elif [ $1 -eq 5 ]
+	then
+		if [ $2 -lt 13 ]
+		then
+			ch="\e[42m5 POINT\e[49m"
+		else
+			ch="\e[101m0 POINT\e[49m"
+		fi
+	else
+		ch="\e[42m5 POINT\e[49m"
 	fi
 }
 i=0
@@ -67,9 +85,9 @@ do
    SYSS=`uname -s`
 	if [ $SYSS = "Linux" ]
 	then
-   	CHECK=`../push_swap $ARG | ./checker $ARG`
+   	CHECK=`../push_swap $ARG | ./utils/checker $ARG`
 	else
-	CHECK=`../push_swap $ARG | ./checker_Mac $ARG`
+	CHECK=`../push_swap $ARG | ./utils/checker_Mac $ARG`
 	fi
    	if [ $CHECK = "KO" ]
 	then
@@ -82,7 +100,7 @@ do
    printf "\e[36m$((i +1))\e[39m\t$T\t ${bold}$ch${normal}\t\e[92m$CHECK\e[39m\n"
    else
    ch="\e[101m0 POINT\e[49m"
-   printf "\e[36m$((i +1))\e[39m\t$T\t${bold}$ch${normal}\t\e[91m$CHECK\e[39m\n"
+   printf "\e[36m$((i +1))\e[39m\t$T\t ${bold}$ch${normal}\t\e[91m$CHECK\e[39m\n"
 	fi
    if [ $T -gt $best ];
    then 
