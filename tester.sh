@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 11:29:01 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 15:09:53 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ i=0
 best=0
 ISOK="Ok"
 min=10000
+rm -rf log.txt
 while [ $i -lt $2 ]
 do
    T=`seq $1 | sort -R | tee numbers.txt | xargs ../push_swap | wc -l`
@@ -72,10 +73,11 @@ do
 	fi
    	if [ $CHECK = "KO" ]
 	then
+		echo $i "--" $ARG >> log.txt
 		ISOK="KO"
 	fi
-	
    fun $1 $T
+	
    if [ $CHECK = "OK" ];then
    printf "\e[36m$((i +1))\e[39m\t$T\t ${bold}$ch${normal}\t\e[92m$CHECK\e[39m\n"
    else
@@ -93,15 +95,16 @@ do
    rm -rf numbers.txt
    i=`expr $i + 1`
 done
-printf "\e[93mMAX Instruction\e[39m $best\n"
+printf "\n${bold}\\e[93mMAX Instruction\e[39m $best${normal}\n"
 printf "\e[93mAVREGE Instruction\e[39m $(((best + min) /2 ))\n"
 printf "\e[93mMIN Instruction\e[39m $min\n"
 
 fun $1 $best
 if [ $ISOK = "KO" ]
 then
-	printf "\n      \e[101mNOT ALL INSTRUCTION WORK WITH \e[39m\e[101mOk\e[49m\n"
+	printf "\n      \e[101m${bold}NOT ALL INSTRUCTION WORK WITH ${normal}\e[39m\e[101mOk\e[49m\n"
+	printf "\n           \e[101m${bold}CHECK THE LOG FILE${normal}\e[39m\e[101m\e[49m\n"
 else
-	printf "${bold}\e[93mYOU GOT\e[39m $ch${normal}\n\n"
+	printf "\e[93mYOU GOT\e[39m${bold} $ch${normal}\n\n"
 	printf "      \e[42m${bold}ALL INSTRUCTION WORK WITH OK${normal}\e[49m\n"
 fi
