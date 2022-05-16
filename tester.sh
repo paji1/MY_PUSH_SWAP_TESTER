@@ -6,11 +6,21 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 17:42:40 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 18:00:24 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
+bold=$(tput bold)
+normal=$(tput sgr0)
+if [ -z $1 ] || [ -z $2 ]
+then
+	echo "${bold}missing of argement${normal}"
+	echo "# ./tester.sh" "[size_of stack]" "[number_of_test]"
+	echo "${bold} example:${normal}"
+	echo "# ./tester.sh 500 100"
+	exit 1
+fi
 make  -s -C ../ > /dev/null 2>&1
 if [ $? -ne 0 ]; then
    echo MAKEFILE ERROR
@@ -18,14 +28,12 @@ if [ $? -ne 0 ]; then
 fi
 ls ../push_swap > /dev/null 2>&1
 if [ $? -eq 2 ]; then
-   echo push_swap not found check your make file rull
+   echo push_swap not found check your make file 
    exit 1
 fi
 
 
 ch=""
-bold=$(tput bold)
-normal=$(tput sgr0)
 fun()
 {
 	if [ $1 -eq 100 ]
