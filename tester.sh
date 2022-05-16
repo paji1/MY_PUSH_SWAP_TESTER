@@ -6,12 +6,23 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 16:56:50 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 17:42:40 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
-make -s -C ../ 
+make  -s -C ../ > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+   echo MAKEFILE ERROR
+   exit 1
+fi
+ls ../push_swap > /dev/null 2>&1
+if [ $? -eq 2 ]; then
+   echo push_swap not found check your make file rull
+   exit 1
+fi
+
+
 ch=""
 bold=$(tput bold)
 normal=$(tput sgr0)
