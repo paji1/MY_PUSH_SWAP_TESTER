@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 10:58:37 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 11:09:42 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,16 +20,16 @@ fun()
 		if [ $2 -lt 700 ]
 		then
 			ch="\e[42m5 POINT\e[49m"
-		elif [ $2 -lt 900]
+		elif [ $2 -lt 900 ]
 		then
 			ch="\e[42m4 POINT\e[49m"
-		elif [ $2 -lt 1100]
+		elif [ $2 -lt 1100 ]
 		then
 			ch="\e[42m3 POINT\e[49m"
-		elif [ $2 -lt 1300]
+		elif [ $2 -lt 1300 ]
 		then
 			ch="\e[42m2 POINT\e[49m"
-		elif [ $2 -lt 1500]
+		elif [ $2 -lt 1500 ]
 		then
 			ch="\e[42m1 POINT\e[49m"
 		fi
@@ -38,16 +38,16 @@ fun()
 		if [ $2 -lt 5500 ]
 		then
 			ch="\e[42m5 POINT\e[49m"
-		elif [ $2 -lt 7000]
+		elif [ $2 -lt 7000 ]
 		then
 			ch="\e[42m4 POINT\e[49m"
-		elif [ $2 -lt 8500]
+		elif [ $2 -lt 8500 ]
 		then
 			ch="\e[42m3 POINT\e[49m"
-		elif [ $2 -lt 10000]
+		elif [ $2 -lt 10000 ]
 		then
 			ch="\e[42m2 POINT\e[49m"
-		elif [ $2 -lt 11500]
+		elif [ $2 -lt 11500 ]
 		then
 			ch="\e[42m1 POINT\e[49m"
 		fi
