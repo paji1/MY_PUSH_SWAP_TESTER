@@ -6,13 +6,15 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 11:11:47 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 11:26:09 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #!/bin/sh
 make -s -C ../ 
 ch=""
+bold=$(tput bold)
+normal=$(tput sgr0)
 fun()
 {
 	if [ $1 -eq 100 ]
@@ -75,10 +77,10 @@ do
 	
    fun $1 $T
    if [ $CHECK = "OK" ];then
-   printf "\e[36m$((i +1))\e[39m\t$T\t $ch\t\e[92m$CHECK\e[39m\n"
+   printf "\e[36m$((i +1))\e[39m\t$T\t ${bold}$ch${normal}\t\e[92m$CHECK\e[39m\n"
    else
    ch="\e[101m0 POINT\e[49m"
-   printf "\e[36m$((i +1))\e[39m\t$T\t$ch\t\e[91m$CHECK\e[39m\n"
+   printf "\e[36m$((i +1))\e[39m\t$T\t${bold}$ch${normal}\t\e[91m$CHECK\e[39m\n"
 	fi
    if [ $T -gt $best ];
    then 
@@ -101,5 +103,5 @@ then
 	printf "\n      \e[101mNOT ALL INSTRUCTION WORK WITH \e[39m\e[101mOk\e[49m\n"
 else
 	printf "\e[93mYOU GOT\e[39m $ch\n\n"
-	printf "      \e[42mALL INSTRUCTION WORK WITH OK\e[49m\n"
+	printf "      \e[42m${bold}ALL INSTRUCTION WORK WITH OK${normal}\e[49m\n"
 fi
