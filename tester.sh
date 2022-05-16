@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 10:55:59 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 10:58:37 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ do
    if [ $CHECK = "OK" ];then
    printf "\e[36m$((i +1))\e[39m\t$T\t $ch\t\e[92m$CHECK\e[39m\n"
    else
+   ch="\e[101m0 POINT\e[49m"
    printf "\e[36m$((i +1))\e[39m\t$T\t$ch\t\e[91m$CHECK\e[39m\n"
 	fi
    if [ $T -gt $best ];
