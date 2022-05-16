@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 15:09:53 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 15:14:16 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ do
 	fi
    	if [ $CHECK = "KO" ]
 	then
-		echo $i "--" $ARG >> log.txt
+		echo $((i + 1)) "--" $ARG >> log.txt
 		ISOK="KO"
 	fi
    fun $1 $T
