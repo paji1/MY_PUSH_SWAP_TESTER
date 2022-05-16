@@ -6,7 +6,7 @@
 #    By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 06:09:02 by tel-mouh          #+#    #+#              #
-#    Updated: 2022/05/16 18:21:32 by tel-mouh         ###   ########.fr        #
+#    Updated: 2022/05/16 18:24:56 by tel-mouh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,7 @@ do
 	else
 	CHECK=`../push_swap $ARG | ./utils/checker_Mac $ARG`
 	fi
-   	if [ $CHECK = "Error" ]
+   	if [ -z $CHECK ]
 	then
 		echo ERROR
 		exit 1
