@@ -11,7 +11,7 @@ RUN ./tester.sh [SIZE_OF_STACK] [NUMBER_OF_TEST] and you good to go
 ```sh
 cd MY_PUSH_SWAP_TESTER
 ```
-##excute
+## excute
 
 ```sh
 ./tester.sh 100 50 
