@@ -1,9 +1,9 @@
 all :
-	make -C ../
+	@ make -C ../
 
 clean : 
-	make clean -C ../
+	@ make clean -C ../
 fclean : 
-	make fclean -C ../
+	@ make fclean -C ../
 re :
-	make re -C ../
+	@ make re -C ../
